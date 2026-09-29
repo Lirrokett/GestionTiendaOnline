@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package vista;
 
 import controlador.ControladorPedidos;
@@ -21,10 +18,6 @@ import main.Utilidades;
 import modelo.Pedido;
 import modelo.Producto;
 
-/**
- *
- * @author songo
- */
 public class GestionTiendaOnline1 {
 
     public static void main(String[] args) throws SQLException {

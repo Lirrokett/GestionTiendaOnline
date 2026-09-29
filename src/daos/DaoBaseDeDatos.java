@@ -19,18 +19,15 @@ import modelo.Producto;
  * @author songo
  */
 public class DaoBaseDeDatos {
-    // Los siguientes atributos se utilizan para recoger los valores del fich de
-		// configuracion
+
 		private ResourceBundle configFile;
 		private String urlBD;
 		private String userBD;
 		private String passwordBD;
 
-		// Sentencias SQL		
 		final String RECOGERPRODUCTOS = "SELECT * FROM producto";
                 final String sql = "UPDATE PRODUCTO SET stock = ? WHERE ID = ?";
-		// Para la conexi n utilizamos un fichero de configuaraci n, config que
-		// guardamos en el paquete control:
+
 		public DaoBaseDeDatos() {
 			this.configFile = ResourceBundle.getBundle("configClase");
 			this.urlBD = this.configFile.getString("Conn");

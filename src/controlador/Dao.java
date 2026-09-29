@@ -6,9 +6,7 @@ import modelo.Pedido;
 import modelo.Producto;
 import java.util.List;
 
-/**
- * Operaciones de acceso a datos utilizadas por el controlador.
- */
+
 public interface Dao {
 
     Cliente registrarCliente(Cliente cliente) throws AccesoDatosException;

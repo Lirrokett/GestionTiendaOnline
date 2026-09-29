@@ -17,13 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-/**
- * Implementación del DAO del Reto 0.
- * Cliente y Producto se gestionan mediante MySQL y Pedido mediante pedido.dat.
- *
- * Este DAO se adapta a los modelos y configuración que ya existían en
- * GestionTiendaOnline, sin sustituir sus DAOs ni controladores originales.
- */
+
 public class DaoImplementacion implements Dao {
 
     private final String urlBD;

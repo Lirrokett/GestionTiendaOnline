@@ -9,9 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Controlador de los casos de uso aportados por el Reto 0.
- */
+
 public class Controlador {
 
     private final Dao dao;
@@ -20,7 +18,6 @@ public class Controlador {
         dao = new DaoImplementacion();
     }
 
-    /** Caso de uso: Registrar un cliente. */
     public Cliente registrarCliente(String nombre, String email,
                                     String telefono, String direccion)
             throws AccesoDatosException {
@@ -59,13 +56,11 @@ public class Controlador {
         return dao.registrarCliente(cliente);
     }
 
-    /** Caso de uso: Consultar productos disponibles. */
     public List<Producto> consultarProductosDisponibles()
             throws AccesoDatosException {
         return dao.consultarProductosDisponibles();
     }
 
-    /** Caso de uso: Realizar el pedido de un producto. */
     public Pedido realizarPedido(int idCliente, int idProducto)
             throws AccesoDatosException {
 
@@ -98,7 +93,6 @@ public class Controlador {
         pedido.setClienteId(idCliente);
         pedido.setProductoId(new ArrayList<>(java.util.Arrays.asList(idProducto)));
 
-        // Pedido se almacena en pedido.dat, tal y como indica el enunciado.
         dao.guardarPedido(pedido);
 
         return pedido;

@@ -45,7 +45,6 @@ public class DaoFichero {
             Pedido p4 = new Pedido(4,LocalDate.of(2026, 9, 10),LocalDate.of(2026, 9, 15),true,new ArrayList<>(java.util.Arrays.asList(4, 5)),4);
 
             Pedido p5 = new Pedido(5,LocalDate.of(2026, 9, 12),null,false,new ArrayList<>(java.util.Arrays.asList(1, 2, 5)),5);
-	    // 1. Escribir el fichero auxiliar
 	    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(aux))) {
 	    	oos.writeObject(p1);
                 oos.writeObject(p2);
@@ -58,7 +57,6 @@ public class DaoFichero {
 	        return;
 	    }
 
-	    // 2. Renombrar fichero original a backup
 	    if (fichero.exists()) {
 	        if (!fichero.renameTo(backup)) {
 	            System.out.println("Error al crear el backup");
@@ -66,7 +64,6 @@ public class DaoFichero {
 	        }
 	    }
 
-	    // 3. Renombrar auxiliar como definitivo
 	    if (!aux.renameTo(fichero)) {
 	        System.out.println("Error al renombrar el fichero auxiliar");
 	        if (backup.exists()) {
@@ -93,8 +90,8 @@ public class DaoFichero {
 	        }
 
 	    } catch (EOFException e) {
-	        // fin normal
-	    } catch (Exception e) {
+                e.printStackTrace();
+            } catch (Exception e) {
 	        System.out.println("Error al leer pedidos");
 	    }
 	
@@ -112,8 +109,8 @@ public class DaoFichero {
 	        }
 
 	    } catch (EOFException e) {
-	        // fin normal
-	    } catch (Exception e) {
+                e.printStackTrace();
+            } catch (Exception e) {
 	        System.out.println("Error al leer pedidos");
 	    }
 	
